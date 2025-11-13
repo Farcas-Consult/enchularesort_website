@@ -23,7 +23,7 @@ const accessibilitySteps = [
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
     ],
     features: ["Gradual ramp (1:12 slope)", "Tactile paving", "Staff assistance"],
-    landmark: "🌳 Tall acacia tree before gate",
+    landmark: "Tall acacia tree before gate",
   },
   {
     step: 2,
@@ -34,7 +34,7 @@ const accessibilitySteps = [
       "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
     ],
     features: ["Lowered counter (75cm)", "Braille signage", "Hearing loop system"],
-    landmark: "🏠 Thatched roof with carved wooden sign",
+    landmark: "Thatched roof with carved wooden sign",
   },
   {
     step: 3,
@@ -45,7 +45,7 @@ const accessibilitySteps = [
       "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=800&q=80",
     ],
     features: ["Wide pathway (1.5m)", "Handrails both sides", "Gentle slopes, no stairs"],
-    landmark: "⛲ Water fountain on right side",
+    landmark: "Water fountain on right side",
   },
   {
     step: 4,
@@ -56,7 +56,7 @@ const accessibilitySteps = [
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80",
     ],
     features: ["36-inch wide doors", "Roll-in showers", "Grab bars & emergency cord"],
-    landmark: "🟢 Green accessibility plaque",
+    landmark: "Green accessibility plaque",
   },
   {
     step: 5,
@@ -67,7 +67,7 @@ const accessibilitySteps = [
       "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&q=80",
     ],
     features: ["Accessible restaurant", "Pool lift available", "Dedicated parking spots"],
-    landmark: "♿ Universal access symbols",
+    landmark: "Universal access symbols",
   },
 ];
 
@@ -125,7 +125,7 @@ export default function AccessibilityPage() {
         {/* Google Map Location */}
         <div className="mb-16 bg-[#3D2517]/70 rounded-3xl overflow-hidden border-2 border-[#5C4033]/50 shadow-2xl">
           <div className="p-6 bg-[#2C1B16]/80">
-            <h2 className="text-3xl font-bold text-[#FAF5F0] mb-2 text-center">📍 Find Us Here</h2>
+            <h2 className="text-3xl font-bold text-[#FAF5F0] mb-2 text-center">Find Us Here</h2>
             <p className="text-[#D7BFA8] text-center mb-4">Nairobi-Namanga Rd, Kajiado, Kenya</p>
           </div>
           <div className="relative h-96 w-full">
@@ -184,7 +184,7 @@ export default function AccessibilityPage() {
                       {item.title}
                     </h2>
                     <p className="text-[#D7BFA8] text-lg flex items-center gap-2">
-                      📍 <span>{item.location}</span>
+                      <span>{item.location}</span>
                     </p>
                   </div>
 
@@ -269,7 +269,7 @@ export default function AccessibilityPage() {
            {/* CTA */}
                   <div className="mt-12 text-center">
                     <a
-                      href="#contact"
+                      href="#booking"
                       className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#5C4033] to-[#800000] text-[#FAF5F0] font-semibold rounded-full hover:from-[#800000] hover:to-[#A04040] transition-all duration-300 shadow-lg transform hover:scale-105 active:scale-95"
                     >
                       <Heart className="w-5 h-5" /> Plan Your Escape

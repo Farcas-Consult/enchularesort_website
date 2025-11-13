@@ -197,13 +197,13 @@ const Amenities: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-4 px-6 py-2 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
             <span className="text-[#D7BFA8] font-semibold tracking-wide text-sm uppercase">
-              World-Class Facilities
+              AMENITIES
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-[#FAF5F0] mb-6 tracking-tight">
             Premium
             <span className="block bg-gradient-to-r from-[#5C4033] via-[#800000] to-[#A04040] bg-clip-text text-transparent">
-              Amenities & Services
+              World-Class Facilities
             </span>
           </h2>
           <p className="text-xl text-[#D7BFA8] max-w-3xl mx-auto leading-relaxed">

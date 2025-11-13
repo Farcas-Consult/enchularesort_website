@@ -10,7 +10,6 @@ import {
   Users,
   Sparkles,
   Heart,
-  Globe,
   CheckCircle,
 } from "lucide-react";
 import Image from "next/image";
@@ -78,7 +77,7 @@ export default function About() {
         <div className="text-center mb-16">
           <div className="inline-block mb-4 px-6 py-2 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
             <span className="text-[#D7BFA8] font-semibold tracking-wide text-sm uppercase">
-              Discover Enchula
+              About Us
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-[#FAF5F0]">
@@ -94,7 +93,6 @@ export default function About() {
           {/* Story Box */}
           <div className="lg:col-span-2 bg-[#2C1B16]/50 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-[#5C4033]/20 hover:scale-105 transition-transform duration-500">
             <div className="flex items-center gap-3 mb-6">
-              <Globe className="w-10 h-10 text-[#A04040]" />
               <h3 className="text-3xl font-bold text-[#FAF5F0]">Our Story</h3>
             </div>
             <p className="text-lg leading-relaxed text-[#D7BFA8] mb-6">
@@ -122,7 +120,6 @@ export default function About() {
           {/* Contact Box */}
           <div className="bg-[#2E1A15]/50 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-[#5C4033]/30 hover:scale-105 transition-transform duration-500">
             <div className="flex items-center gap-3 mb-6">
-              <MapPin className="w-10 h-10 text-[#5C4033]" />
               <h3 className="text-2xl font-bold text-[#FAF5F0]">Visit Us</h3>
             </div>
 
@@ -214,7 +211,7 @@ export default function About() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a
-            href="#contact"
+            href="#booking"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#5C4033] to-[#800000] text-[#FAF5F0] font-semibold rounded-full hover:from-[#800000] hover:to-[#A04040] transition-all duration-300 shadow-lg transform hover:scale-105 active:scale-95"
           >
             <Heart className="w-5 h-5" /> Plan Your Escape

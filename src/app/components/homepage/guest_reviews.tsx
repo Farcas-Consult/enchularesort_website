@@ -112,7 +112,7 @@ const ReviewsPage = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-[#FAF5F0] mb-4">
-            Guest Reviews
+            REVIEWS & TESTIMONIALS
           </h1>
           <p className="text-xl text-[#D7BFA8] mb-8">
             Real experiences from travelers who&apos;ve stayed with us
@@ -177,7 +177,7 @@ const ReviewsPage = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full px-4 py-3 bg-[#2C1B16]/60 border border-[#5C4033]/50 rounded-xl text-[#FAF5F0] focus:border-[#800000] focus:outline-none transition-colors"
-                      placeholder="John Doe"
+                      placeholder="Name"
                     />
                   </div>
                   <div>
@@ -187,7 +187,7 @@ const ReviewsPage = () => {
                       value={formData.location}
                       onChange={(e) => setFormData({...formData, location: e.target.value})}
                       className="w-full px-4 py-3 bg-[#2C1B16]/60 border border-[#5C4033]/50 rounded-xl text-[#FAF5F0] focus:border-[#800000] focus:outline-none transition-colors"
-                      placeholder="Nairobi, Kenya"
+                      placeholder="Location"
                     />
                   </div>
                 </div>
@@ -267,20 +267,18 @@ const ReviewsPage = () => {
 
         {/* CTA */}
         <div className="text-center mt-16 bg-[#2C1B16]/70 p-10 rounded-3xl border-2 border-[#800000]/40 backdrop-blur-sm">
-          <span className="text-5xl mb-4 block">🌟</span>
+          
           <h3 className="text-3xl font-bold text-[#FAF5F0] mb-4">
             Ready to Create Your Own Story?
           </h3>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
-            <Link
-              href="/contact"
+            <a
+              href="#booking"
               className="inline-flex items-center gap-3 bg-[#800000] hover:bg-[#A04040] text-white font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               Book Your Stay
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
+              
+            </a>
             <Link
               href="https://wa.me/254727000027"
               target="_blank"

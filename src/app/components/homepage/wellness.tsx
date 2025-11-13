@@ -19,10 +19,10 @@ export default function WellnessPage() {
         <div className="text-center mb-16">
           <div className="inline-block mb-6 px-6 py-3 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
             <span className="text-[#D7BFA8] font-semibold tracking-wide text-sm uppercase">
-              Rejuvenate & Restore
+              WELLNESS & SPA
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#FAF5F0] mb-4">Wellness & Spa</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#FAF5F0] mb-4">Rejuvenate & Restore</h1>
           <p className="text-lg text-[#D7BFA8] max-w-3xl mx-auto">Reconnect with yourself in peace and nature.</p>
         </div>
 
@@ -40,7 +40,7 @@ export default function WellnessPage() {
               </div>
             </div>
             <div className="p-8 flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-[#FAF5F0] mb-4">💆 Massage Treatments</h2>
+              <h2 className="text-3xl font-bold text-[#FAF5F0] mb-4"> Massage Treatments</h2>
               <p className="text-[#F8F3EF] mb-6 leading-relaxed">
                 Traditional and aromatherapy massages using natural oils. Available in-room or under the trees for a truly immersive experience.
               </p>
@@ -70,7 +70,7 @@ export default function WellnessPage() {
         <div className="mb-12 bg-[#2C1B16]/60 rounded-2xl overflow-hidden border border-[#5C4033]/30">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-8 flex flex-col justify-center md:order-2">
-              <h2 className="text-3xl font-bold text-[#FAF5F0] mb-4">🧘 Yoga & Meditation</h2>
+              <h2 className="text-3xl font-bold text-[#FAF5F0] mb-4"> Yoga & Meditation</h2>
               <p className="text-[#F8F3EF] mb-6 leading-relaxed">
                 Morning sessions by the pool. Mats provided. Suitable for all levels from beginners to advanced practitioners.
               </p>
@@ -115,7 +115,7 @@ export default function WellnessPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#2C1B16] via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="flex justify-between items-end">
-                  <h2 className="text-2xl font-bold text-[#FAF5F0]">🧖 Sauna & Steam Room</h2>
+                  <h2 className="text-2xl font-bold text-[#FAF5F0]"> Sauna & Steam Room</h2>
                   <span className="text-[#D7BFA8] font-bold text-lg">KSh 1,200</span>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function WellnessPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#2C1B16] via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="flex justify-between items-end">
-                  <h2 className="text-2xl font-bold text-[#FAF5F0]">🌿 Herbal Teas & Infusions</h2>
+                  <h2 className="text-2xl font-bold text-[#FAF5F0]"> Herbal Teas & Infusions</h2>
                   <span className="text-[#D7BFA8] font-bold text-lg">Complimentary</span>
                 </div>
               </div>
@@ -296,16 +296,13 @@ export default function WellnessPage() {
           <p className="text-[#D7BFA8] mb-6 text-lg">
             Ready to relax and restore your inner peace?
           </p>
-          <Link
-            href="https://wa.me/254727000027"
-            target="_blank"
+          <a
+            href="#booking"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-[#800000] to-[#5C4033] hover:from-[#A04040] hover:to-[#6B4423] text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             Book Your Wellness Session
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </Link>
+           
+          </a>
         </div>
       </div>
     </section>

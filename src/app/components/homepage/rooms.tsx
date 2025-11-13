@@ -81,7 +81,7 @@ export default function Rooms() {
         {/* Header — palette-consistent text & accents */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4 px-6 py-2 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
-            <span className="text-[#D7BFA8] font-semibold tracking-wide text-sm uppercase">Luxury Accommodations</span>
+            <span className="text-[#D7BFA8] font-semibold tracking-wide text-sm uppercase">ROOMS</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-[#FAF5F0] mb-6 tracking-tight">
             Discover Your
@@ -187,14 +187,14 @@ export default function Rooms() {
     hover:scale-[1.02] active:scale-[0.98] 
     border border-white/10 hover:border-[#D7BFA8]/30
     group relative overflow-hidden`}
->
-  <a
-    href="#booking"
-    className="flex items-center gap-2 w-full h-full"
-  >
-    Book Now
-    <ArrowRight className="w-5 h-3 transition-transform duration-300 group-hover:translate-x-1" />
-  </a>
+     >
+      <a
+       href="#booking"
+       className="flex items-center gap-2 w-full h-full"
+     >
+       Book Now
+       <ArrowRight className="w-5 h-3 transition-transform duration-300 group-hover:translate-x-1" />
+     </a>
   {/* Optional inner highlight on hover */}
   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
 </button>

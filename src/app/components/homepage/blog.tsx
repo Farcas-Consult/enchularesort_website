@@ -103,7 +103,7 @@ const BlogPage = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-[#FAF5F0] mb-4">
-            Stories & Travel Tips
+            BLOGS & TRAVEL TIPS
           </h1>
           <p className="text-xl text-[#D7BFA8]">
             Discover local secrets and plan your perfect escape

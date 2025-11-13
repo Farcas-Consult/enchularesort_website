@@ -173,10 +173,10 @@ export default function VirtualTourPage() {
               className="px-3 py-1.5 bg-[#2C1B16]/60 border border-[#5C4033]/40 rounded-full text-xs md:text-sm font-medium"
               style={{ color: currentSpot.color }}
             >
-              📍 {currentSpot.id.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
+               {currentSpot.id.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
             </span>
             <span className="px-3 py-1.5 bg-[#800000]/20 text-[#D7BFA8] rounded-full text-xs md:text-sm font-medium">
-              ♿ Fully Accessible
+               Fully Accessible
             </span>
           </div>
         </div>

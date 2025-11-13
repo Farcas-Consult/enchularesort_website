@@ -25,7 +25,7 @@ const KidsFamilyPage = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-6 px-6 py-3 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
             <span className="text-[#D7BFA8] font-semibold tracking-wide text-sm uppercase">
-              For Families & Little Explorers
+              KIDS & FAMILY
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-[#FAF5F0] mb-6 leading-tight">
@@ -41,7 +41,7 @@ const KidsFamilyPage = () => {
           {/* Kids' Activities Section */}
           <div>
             <h2 className="text-3xl font-bold text-[#FAF5F0] mb-8 flex items-center gap-3">
-              🌟 Kids&apos; Activities
+               Kids&apos; Activities
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
@@ -96,7 +96,7 @@ const KidsFamilyPage = () => {
           {/* Family Comforts Section */}
           <div>
             <h2 className="text-3xl font-bold text-[#FAF5F0] mb-8 flex items-center gap-3">
-              🛏️ Family Comforts
+               Family Comforts
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
@@ -178,7 +178,7 @@ const KidsFamilyPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="#booking"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-[#800000] to-[#5C4033] hover:from-[#A04040] hover:to-[#6B4423] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               Book Your Family Stay

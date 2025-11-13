@@ -38,6 +38,15 @@ export default function DiningPage() {
     },
   ];
 
+  // Children's Menu Data
+  const childrenMenu = [
+    { name: "Mini Ugali & Chicken", price: "KSh 600", description: "Soft ugali with tender chicken pieces (nut-free, gluten-free)" },
+    { name: "Cheesy Pasta", price: "KSh 550", description: "Mild cheese pasta with buttered veggies (contains dairy)" },
+    { name: "Fruit & Yogurt Bowl", price: "KSh 450", description: "Fresh seasonal fruits with plain yogurt (gluten-free, nut-free)" },
+    { name: "Mini Burger (Beef or Veggie)", price: "KSh 650", description: "Small patty with bun, lettuce, and tomato (gluten-free bun available on request)" },
+    { name: "Mandazi & Juice", price: "KSh 400", description: "Freshly fried mandazi with passion or mango juice (vegan, nut-free)" },
+  ];
+
   return (
     <section
       className="relative py-20 px-4 bg-fixed"
@@ -72,7 +81,7 @@ export default function DiningPage() {
             />
             <div className="p-6 flex flex-col justify-center">
               <h2 className="text-3xl font-bold text-[#FAF5F0] mb-3">
-                🍽️ Restaurant & Bar
+                 Restaurant & Bar
               </h2>
               <p className="text-[#F8F3EF] mb-4">
                 Savor international cuisine crafted with fresh local
@@ -97,7 +106,7 @@ export default function DiningPage() {
               />
               <div className="p-6 flex flex-col justify-center">
                 <h2 className="text-2xl font-bold text-[#FAF5F0] mb-3">
-                  🌅 Sunset Dinner
+                   Sunset Dinner
                 </h2>
                 <p>
                   Private table by the pool with curated menu and live acoustic
@@ -108,27 +117,39 @@ export default function DiningPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#2C1B16]/40 p-6 rounded-2xl border border-[#5C4033]/30">
-              <h2 className="text-2xl font-bold text-[#FAF5F0] mb-3">
-                🍹 Cocktail Classes
-              </h2>
-              <p>
-                Learn to mix signature drinks with our bartender. Fun for
-                couples and groups!
-              </p>
-            </div>
+  <div className="bg-[#2C1B16]/40 p-6 rounded-2xl border border-[#5C4033]/30 flex flex-col">
+    <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+      <img
+        src="https://images.unsplash.com/photo-1603133872878-684f208737e9?w=800&q=80"
+        alt="Cocktail mixing class at a stylish bar"
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <h2 className="text-2xl font-bold text-[#FAF5F0] mb-3">
+      Cocktail Classes
+    </h2>
+    <p className="text-[#F8F3EF]">
+      Learn to mix signature drinks with our bartender. Fun for couples and groups!
+    </p>
+  </div>
 
-            <div className="bg-[#2C1B16]/40 p-6 rounded-2xl border border-[#5C4033]/30">
-              <h2 className="text-2xl font-bold text-[#FAF5F0] mb-3">
-                🥗 Farm-to-Table Dinners
-              </h2>
-              <p>
-                Monthly themed dinner featuring produce from nearby farms and
-                Maasai cooperatives.
-              </p>
-            </div>
-          </div>
-        </div>
+  <div className="bg-[#2C1B16]/40 p-6 rounded-2xl border border-[#5C4033]/30 flex flex-col">
+    <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+      <img
+        src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80"
+        alt="Farm-to-table outdoor dining with fresh produce"
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <h2 className="text-2xl font-bold text-[#FAF5F0] mb-3">
+      Farm-to-Table Dinners
+    </h2>
+    <p className="text-[#F8F3EF]">
+      Monthly themed dinner featuring produce from nearby farms and Maasai cooperatives.
+    </p>
+  </div>
+</div>
+</div>
 
         {/* Food Menu with Pagination */}
         <div className="bg-[#2C1B16]/60 p-8 rounded-2xl border border-[#5C4033]/30 mb-12">
@@ -197,6 +218,44 @@ export default function DiningPage() {
             </button>
           </div>
         </div>
+
+        {/* Children's Menu */}
+        <div className="bg-[#2C1B16]/60 p-8 rounded-2xl border border-[#5C4033]/30">
+          <h2 className="text-3xl font-bold text-[#FAF5F0] mb-8 text-center">
+            Children&apos;s Menu
+          </h2>
+          <p className="text-[#D7BFA8] text-center mb-6">
+            Specially crafted for young guests, with allergy-friendly options clearly marked.
+          </p>
+          
+          <div className="space-y-4">
+            {childrenMenu.map((item, index) => (
+              <div
+                key={index}
+                className="border-b border-[#5C4033]/30 pb-4"
+              >
+                <div className="flex justify-between items-start mb-2">
+                  <h4 className="text-xl font-semibold text-[#FAF5F0]">
+                    {item.name}
+                  </h4>
+                  <span className="text-[#D7BFA8] font-bold">
+                    {item.price}
+                  </span>
+                </div>
+                <p className="text-[#F8F3EF]/80">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+           <div>
+              {/* ✅ BOOK NOW BUTTON - NEW */}
+          <a
+            href="#booking"
+            className="mt-6 inline-block px-8 py-3 bg-[#800000] text-[#FAF5F0] font-bold rounded-full hover:bg-[#A04040] transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Book Now
+          </a>
+          </div>
       </div>
     </section>
   );

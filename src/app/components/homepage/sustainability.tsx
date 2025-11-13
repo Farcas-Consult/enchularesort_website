@@ -69,13 +69,13 @@ export default function Sustainability() {
         <div className="text-center mb-20">
           <div className="inline-block mb-4 px-6 py-2 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#A04040]/50">
             <span className="text-[#F8F3EF] font-semibold tracking-wide text-sm uppercase">
-              Our Commitment
+              SUSTAINABILITY
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-[#F8F3EF] mb-6 tracking-tight">
             Luxury Meets
             <span className="block bg-gradient-to-r from-[#A04040] via-[#A9745B] to-[#D7BFA8] bg-clip-text text-transparent">
-              Sustainability
+              Our Commitments
             </span>
           </h2>
           <p className="text-[#D7BFA8] text-xl max-w-3xl mx-auto leading-relaxed">
@@ -142,7 +142,7 @@ export default function Sustainability() {
         {/* CTA */}
         <div className="mt-16 text-center">
           <a
-            href="#contact"
+            href="#booking"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#5C4033] via-[#A04040] to-[#800000] text-white font-semibold rounded-full hover:from-[#A04040] hover:via-[#800000] hover:to-[#5C4033] transition-all duration-300 shadow-lg hover:shadow-[#A04040]/40 transform hover:scale-105"
           >
             <Leaf size={20} />

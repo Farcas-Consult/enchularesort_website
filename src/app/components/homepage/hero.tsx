@@ -2,11 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import {
-  ChevronDown,
   Star,
   MapPin,
-  Calendar,
-  Users,
   Sparkles,
   Award,
 } from "lucide-react";
@@ -30,7 +27,7 @@ export default function Hero() {
   }, []);
 
   const highlights = [
-    { icon: <Star className="w-5 h-5" />, text: "4-Star Luxury" },
+    { icon: <Star className="w-5 h-5" />, text: "5-Star Luxury" },
     { icon: <MapPin className="w-5 h-5" />, text: "Nairobi - Namanga Rd, Kajiado" },
     { icon: <Award className="w-5 h-5" />, text: "Award-Winning" },
   ];
@@ -109,8 +106,12 @@ export default function Hero() {
             className="group relative px-10 py-4 bg-gradient-to-r from-[#A04040] to-[#5C2E2E] text-white text-lg font-semibold rounded-full shadow-2xl transition-all duration-300 hover:scale-110"
           >
             <span className="relative z-10 flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
+              
+              <a
+              href="#booking"
+              >
               Book Your Stay
+              </a>
             </span>
           </button>
 
@@ -121,7 +122,6 @@ export default function Hero() {
             }}
             className="px-10 py-4 border-2 border-[#F8F3EF]/70 text-[#F8F3EF] text-lg font-semibold rounded-full bg-[#F8F3EF]/10 hover:bg-[#F8F3EF]/20 transition-all duration-300 hover:scale-110 flex items-center gap-2"
           >
-            <Users className="w-5 h-5" />
             Discover More
           </button>
         </div>
@@ -147,18 +147,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center gap-2 text-[#F8F3EF]">
-          <span className="text-sm font-semibold tracking-wide">
-            SCROLL TO EXPLORE
-          </span>
-          <div className="w-6 h-10 border-2 border-[#F8F3EF]/60 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-[#A9745B] rounded-full animate-scrollDot"></div>
-          </div>
-          <ChevronDown className="w-6 h-6 text-[#A9745B]" />
-        </div>
-      </div>
 
       <style jsx>{`
         @keyframes fadeInUp {

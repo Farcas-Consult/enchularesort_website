@@ -73,12 +73,12 @@ export default function Health_Sanity() {
         {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-block mb-4 px-6 py-2 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
-            <span className="text-[#F8F3EF] font-semibold tracking-wide text-sm uppercase">Your Wellbeing First</span>
+            <span className="text-[#F8F3EF] font-semibold tracking-wide text-sm uppercase">HEALTH & SAFETY</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-[#FAF5F0] mb-6 tracking-tight">
-            Health & 
+             Your Health & 
             <span className="block bg-gradient-to-r from-[#A04040] via-[#A9745B] to-[#D7BFA8] bg-clip-text text-transparent">
-              Safety Excellence
+              Wellbeing Priority First
             </span>
           </h2>
           <p className="text-[#F8F3EF] text-xl max-w-3xl mx-auto leading-relaxed">
@@ -124,7 +124,7 @@ export default function Health_Sanity() {
         {/* CTA */}
         <div className="mt-16 text-center">
           <a 
-            href="#contact" 
+            href="#booking" 
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#5C4033] via-[#800000] to-[#A04040] text-white font-semibold rounded-full hover:from-[#800000] hover:via-[#A04040] hover:to-[#5C4033] transition-all duration-300 shadow-lg hover:shadow-[#800000]/40 transform hover:scale-105"
           >
             <Shield size={20} />

@@ -34,21 +34,7 @@ const roomTypes = [
     amenities: ["Free Wi-Fi", "TV", "Air Conditioning", "Private Bathroom", "Garden View"],
     available: true,
   },
-  {
-    id: 3,
-    name: "Family Suite",
-    capacity: "4 Adults + 2 Children",
-    size: "45 m²",
-    beds: "1 Queen + 2 Singles",
-    price: 15000,
-    weekendPrice: 18000,
-    images: [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80",
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
-    ],
-    amenities: ["Free Wi-Fi", "TV", "Air Conditioning", "Kitchenette", "Living Area", "Balcony"],
-    available: true,
-  },
+
 ];
 
 const addOns = [
@@ -65,7 +51,9 @@ const BookingPage = () => {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [adults, setAdults] = useState(2);
-  const [children, setChildren] = useState(0);
+  // ✅ REMOVED: const [children, setChildren] = useState(0);
+  // ✅ ADDED: childrenAges state
+  const [childrenAges, setChildrenAges] = useState<string[]>(["", "", "", ""]); // for up to 4 children
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
   const [guestInfo, setGuestInfo] = useState({
     name: "",
@@ -74,6 +62,9 @@ const BookingPage = () => {
     specialRequests: "",
   });
   const [showConfirmation, setShowConfirmation] = useState(false);
+
+  // ✅ Helper: total number of children (for display if needed)
+  const totalChildren = childrenAges.filter(age => age !== "").length;
 
   const isWeekend = (date: string) => {
     if (!date) return false;
@@ -124,6 +115,7 @@ const BookingPage = () => {
         setCheckOut("");
         setSelectedAddOns([]);
         setGuestInfo({ name: "", email: "", phone: "", specialRequests: "" });
+        setChildrenAges(["", "", "", ""]); // ✅ reset children
       }, 5000);
     }
   };
@@ -239,19 +231,38 @@ const BookingPage = () => {
                     ))}
                   </select>
                 </div>
-                <div>
+                {/* ✅ REPLACED: Children dropdown with age selector */}
+                <div className="md:col-span-1">
                   <label className="block text-[#D7BFA8] mb-2">Children</label>
-                  <select
-                    value={children}
-                    onChange={(e) => setChildren(Number(e.target.value))}
-                    aria-label="Select number of children"
-                    className="w-full px-4 py-3 bg-[#2C1B16]/60 border border-[#5C4033]/50 rounded-xl text-[#FAF5F0] focus:border-[#800000] focus:outline-none"
-                
-                  >
-                    {[0, 1, 2, 3, 4].map(n => (
-                      <option key={n} value={n}>{n} {n === 1 ? 'Child' : 'Children'}</option>
+                  <div className="space-y-2">
+                    {[...Array(4)].map((_, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <span className="text-[#D7BFA8] text-sm whitespace-nowrap min-w-[50px]">
+                          Child {idx + 1}
+                        </span>
+                        <select
+                          value={childrenAges[idx] || ""}
+                          onChange={(e) => {
+                            const newAges = [...childrenAges];
+                            newAges[idx] = e.target.value;
+                            setChildrenAges(newAges);
+                          }}
+                          aria-label={`Age of child ${idx + 1}`}
+                          className="flex-1 px-3 py-2 text-sm bg-[#2C1B16]/60 border border-[#5C4033]/50 rounded-lg text-[#FAF5F0] focus:border-[#800000] focus:outline-none"
+                        >
+                          <option value="">—</option>
+                          <option value="infant">Infant (0–1)</option>
+                          {[...Array(17)].map((_, i) => {
+                            const age = i + 2; // 2 to 18
+                            return <option key={age} value={age}>{age} years</option>;
+                          })}
+                        </select>
+                      </div>
                     ))}
-                  </select>
+                  </div>
+                  <p className="text-[#A9745B] text-xs mt-2">
+                    Select age or leave blank if no child
+                  </p>
                 </div>
               </div>
               {checkIn && checkOut && (

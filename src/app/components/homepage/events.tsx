@@ -6,7 +6,6 @@ export default function EventsPage() {
   const events = [
     {
       title: "Weddings & Vow Renewals",
-      icon: "💍",
       images: [
         "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
         "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80",
@@ -16,7 +15,6 @@ export default function EventsPage() {
     },
     {
       title: "Corporate Retreats",
-      icon: "🎯",
       images: [
         "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&q=80",
         "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
@@ -26,7 +24,6 @@ export default function EventsPage() {
     },
     {
       title: "Birthday & Family Reunions",
-      icon: "🎂",
       images: [
         "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80",
         "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
@@ -64,7 +61,6 @@ export default function EventsPage() {
             <div key={idx} className="bg-[#2C1B16]/50 p-8 rounded-3xl border border-[#5C4033]/40 backdrop-blur-sm">
               {/* Event Title */}
               <div className="text-center mb-6">
-                <span className="text-5xl mb-3 block">{event.icon}</span>
                 <h2 className="text-3xl font-bold text-[#FAF5F0] mb-2">{event.title}</h2>
                 <p className="text-[#D7BFA8] text-lg">{event.description}</p>
               </div>
@@ -111,7 +107,7 @@ export default function EventsPage() {
         <div className="text-center mt-12 bg-[#2C1B16]/60 p-8 rounded-3xl border border-[#5C4033]/40">
           <p className="text-[#FAF5F0] text-xl mb-6">Ready to plan your event?</p>
           <Link
-            href="mailto:events@enchularesort.co.ke"
+            href="mailto:info@delfintours.co.ke"
             className="inline-block px-10 py-4 bg-[#800000] hover:bg-[#A04040] text-white font-semibold rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Our Event Planner

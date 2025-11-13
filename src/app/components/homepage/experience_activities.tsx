@@ -3,20 +3,9 @@ import Link from "next/link";
 import React from "react";
 
 const experiences = [
-  {
-    title: "Sunset Camel Rides",
-    emoji: "🐫",
-    when: "Saturdays 4:30 PM",
-    images: [
-      "https://images.unsplash.com/photo-1590004448324-879d7ea9e954?w=800&q=80",
-      "https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=800&q=80",
-      "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&q=80",
-      "https://images.unsplash.com/photo-1584463623613-b06b2b5fd630?w=800&q=80",
-    ],
-  },
+
   {
     title: "Guided Nature Walks",
-    emoji: "🌿",
     when: "Daily 7:00 AM",
     images: [
       "https://images.unsplash.com/photo-1505228395867-2fdaa1d65c7a?w=800&q=80",
@@ -27,7 +16,6 @@ const experiences = [
   },
   {
     title: "Maasai Cultural Experience",
-    emoji: "💃",
     when: "Thu & Sun",
     images: [
       "https://images.unsplash.com/photo-1607497266800-66da2aa8d4ac?w=800&q=80",
@@ -38,7 +26,6 @@ const experiences = [
   },
   {
     title: "Stargazing Nights",
-    emoji: "✨",
     when: "Clear nights",
     images: [
       "https://images.unsplash.com/photo-1536253796802-bcb82867534b?w=800&q=80",
@@ -49,7 +36,6 @@ const experiences = [
   },
   {
     title: "Resort Relaxation",
-    emoji: "🏖️",
     when: "Anytime",
     images: [
       "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80",
@@ -60,7 +46,6 @@ const experiences = [
   },
   {
     title: "Outdoor Dining",
-    emoji: "🍽️",
     when: "Daily",
     images: [
       "https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?w=800&q=80",
@@ -104,7 +89,7 @@ export default function ExperiencesPage() {
               {/* Title Bar */}
               <div className="bg-[#2C1B16]/80 p-6 flex items-center justify-between border-b-2 border-[#5C4033]/40">
                 <div className="flex items-center gap-4">
-                  <span className="text-5xl">{exp.emoji}</span>
+                  
                   <div>
                     <h2 className="text-3xl font-bold text-[#FAF5F0]">{exp.title}</h2>
                     <p className="text-[#D7BFA8] text-lg">{exp.when}</p>
@@ -189,7 +174,7 @@ export default function ExperiencesPage() {
         <div className="text-center mt-12 bg-[#2C1B16]/70 p-8 rounded-3xl border-2 border-[#800000]/40">
           <p className="text-[#FAF5F0] text-2xl mb-6 font-semibold">Ready to experience Enchula?</p>
           <Link
-            href="/contact"
+            href="#booking"
             className="inline-block px-10 py-4 bg-[#800000] hover:bg-[#A04040] text-white font-semibold rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Book Your Experience
