@@ -1,16 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { 
   Dumbbell, 
   HeartPulse, 
   Users, 
   Clock, 
-  Calendar, 
-  Star, 
-  ChevronLeft, 
-  ChevronRight 
+  Star 
 } from "lucide-react";
+import Link from "next/link";
 
 const gymImages = [
   "https://images.unsplash.com/photo-1571019613454-1cb2d8a0b5f5?w=1920&q=80", // weights
@@ -106,176 +104,113 @@ const services = [
 ];
 
 export default function GymPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (!isHovered) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % gymImages.length);
-      }, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [isHovered]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % gymImages.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + gymImages.length) % gymImages.length);
-  };
+  // Static background (no carousel) for consistency with other pages
+  const backgroundImage = gymImages[0];
 
   return (
     <section
-      className="relative min-h-screen py-20 px-4 overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      id="gym"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 min-h-screen"
+      style={{
+        backgroundImage: `url('${backgroundImage}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
     >
-      {/* Carousel Background */}
-      <div className="absolute inset-0">
-        {gymImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentIndex ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-            }`}
-          >
-            <img
-              src={image}
-              alt={`Gym view ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2E1A15]/85 via-[#2C1B16]/70 to-[#2E1A15]/90" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2E1A15]/90 via-[#2C1B16]/85 to-[#2E1A15]/95"></div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-[#2C1B16]/70 hover:bg-[#5C4033] text-[#FAF5F0] backdrop-blur-sm border border-[#5C4033]/50 transition-all duration-300 hidden md:block"
-        aria-label="Previous"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-[#2C1B16]/70 hover:bg-[#5C4033] text-[#FAF5F0] backdrop-blur-sm border border-[#5C4033]/50 transition-all duration-300 hidden md:block"
-        aria-label="Next"
-      >
-        <ChevronRight size={24} />
-      </button>
-
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Header */}
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Header with Badge */}
         <div className="text-center mb-16">
-          <div className="inline-block mb-4 px-6 py-2 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
-            <span className="text-[#D7BFA8] font-bold tracking-wide text-sm uppercase">
+          <div className="inline-block mb-6 px-6 py-3 bg-[#5C4033]/20 backdrop-blur-sm rounded-full border border-[#800000]/30">
+            <span className="text-[#D7BFA8] font-semibold tracking-wide text-sm uppercase">
               GYM
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-[#FAF5F0] mb-6">
-            Premium
-            <span className="block bg-gradient-to-r from-[#D7BFA8] to-[#FAF5F0] bg-clip-text text-transparent">
-              Gym Experience
-            </span>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#FAF5F0] mb-6 leading-tight">
+            Premium <span className="bg-gradient-to-r from-[#A04040] via-[#A9745B] to-[#D7BFA8] bg-clip-text text-transparent">Gym Experience</span>
           </h1>
-          <p className="text-xl text-[#D7BFA8] max-w-3xl mx-auto">
+          <p className="text-lg text-[#D7BFA8] max-w-3xl mx-auto">
             Train in a world-class facility surrounded by nature. All equipment sanitized daily.
           </p>
         </div>
 
-        {/* Carousel Indicators */}
-        <div className="flex justify-center mb-12">
-          {gymImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`mx-1 w-3 h-3 rounded-full transition-all ${
-                index === currentIndex ? "bg-[#800000] w-8" : "bg-[#D7BFA8]/50"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-
         {/* Activities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {activities.map((activity, index) => (
             <div
               key={index}
-              className="bg-[#2C1B16]/60 backdrop-blur-md rounded-2xl overflow-hidden border border-[#5C4033]/30 hover:border-[#800000]/50 transition-all duration-500 group"
+              className="bg-[#2C1B16]/60 backdrop-blur-md rounded-2xl overflow-hidden border border-[#5C4033]/30 hover:border-[#800000]/50 transition-all duration-300 group"
             >
               <div className="h-48 overflow-hidden">
                 <img
                   src={activity.image}
                   alt={activity.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
-                <div className="w-14 h-14 rounded-xl bg-[#800000] flex items-center justify-center text-[#FAF5F0] mb-4">
+                <div className="w-12 h-12 rounded-xl bg-[#800000] flex items-center justify-center text-[#FAF5F0] mb-4">
                   {activity.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-[#FAF5F0] mb-2">{activity.title}</h3>
-                <p className="text-[#F8F3EF]">{activity.desc}</p>
+                <h3 className="text-xl font-bold text-[#FAF5F0] mb-2">{activity.title}</h3>
+                <p className="text-[#F8F3EF] text-sm">{activity.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Packages */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-[#FAF5F0] text-center mb-4">Membership Plans</h2>
-          <p className="text-[#D7BFA8] text-center mb-12">
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-[#FAF5F0] text-center mb-4">Membership Plans</h2>
+          <p className="text-[#D7BFA8] text-center mb-8">
             Flexible options for every fitness journey
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className={`bg-[#2C1B16]/60 backdrop-blur-md rounded-3xl p-8 border-2 transition-all duration-500 relative ${
+                className={`bg-[#2C1B16]/60 backdrop-blur-md rounded-2xl p-6 border-2 relative ${
                   pkg.popular
-                    ? "border-[#800000] shadow-2xl scale-105"
-                    : "border-[#5C4033]/50 hover:border-[#800000]/50"
-                }`}
+                    ? "border-[#800000] shadow-lg scale-[1.02]"
+                    : "border-[#5C4033]/30 hover:border-[#800000]/50"
+                } transition-all duration-300`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#800000] text-[#FAF5F0] px-6 py-2 rounded-full font-bold text-sm">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#800000] text-[#FAF5F0] px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap">
                     MOST POPULAR
                   </div>
                 )}
-                <h3 className="text-2xl font-bold text-[#FAF5F0] mb-4">{pkg.name}</h3>
-                <div className="mb-6">
-                  <div className="text-4xl font-bold text-[#800000]">{pkg.price}</div>
-                  <div className="text-[#D7BFA8]">{pkg.period}</div>
+                <h3 className="text-lg font-bold text-[#FAF5F0] mb-3">{pkg.name}</h3>
+                <div className="mb-4">
+                  <div className="text-2xl font-bold text-[#800000]">{pkg.price}</div>
+                  <div className="text-[#D7BFA8] text-sm">{pkg.period}</div>
                 </div>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2 mb-6">
                   {pkg.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Star className="w-5 h-5 text-[#800000] mt-0.5 flex-shrink-0" fill="#800000" />
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <Star className="w-4 h-4 text-[#800000] mt-0.5 flex-shrink-0" fill="#800000" />
                       <span className="text-[#F8F3EF]">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <button className="w-full py-3 bg-[#800000] hover:bg-[#A04040] text-[#FAF5F0] font-bold rounded-xl transition-colors">
-                  <a
-                     href="#booking">
+                <Link
+                  href="/booking"
+                  className="block w-full py-2.5 text-center bg-[#800000] hover:bg-[#A04040] text-[#FAF5F0] font-semibold rounded-lg transition-colors duration-300 text-sm"
+                >
                   Choose Plan
-                  </a>
-                </button>
+                </Link>
               </div>
             ))}
           </div>
         </div>
 
         {/* Additional Services */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-[#FAF5F0] text-center mb-4">Additional Services</h2>
-          <p className="text-[#D7BFA8] text-center mb-12">
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-[#FAF5F0] text-center mb-4">Additional Services</h2>
+          <p className="text-[#D7BFA8] text-center mb-8">
             Enhance your fitness journey with expert support
           </p>
 
@@ -283,10 +218,10 @@ export default function GymPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-[#2C1B16]/60 backdrop-blur-md p-6 rounded-2xl border border-[#5C4033]/30 hover:border-[#800000]/50 transition-all"
+                className="bg-[#2C1B16]/60 backdrop-blur-md p-6 rounded-2xl border border-[#5C4033]/30 hover:border-[#800000]/50 transition-all duration-300"
               >
-                <h3 className="text-xl font-bold text-[#FAF5F0] mb-2">{service.name}</h3>
-                <div className="text-2xl font-bold text-[#800000] mb-3">{service.price}</div>
+                <h3 className="text-lg font-bold text-[#FAF5F0] mb-2">{service.name}</h3>
+                <div className="text-xl font-bold text-[#800000] mb-2">{service.price}</div>
                 <p className="text-[#F8F3EF] text-sm">{service.desc}</p>
               </div>
             ))}
@@ -294,20 +229,20 @@ export default function GymPage() {
         </div>
 
         {/* CTA */}
-        <div className="text-center bg-[#2C1B16]/70 p-12 rounded-3xl border-2 border-[#800000]/40 backdrop-blur-sm">
-          <span className="text-5xl mb-4 block">💪</span>
-          <h2 className="text-4xl font-bold text-[#FAF5F0] mb-6">
+        <div className="text-center bg-[#2C1B16]/40 backdrop-blur-md p-8 rounded-2xl border border-[#5C4033]/30">
+          <span className="text-4xl mb-4 block">💪</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#FAF5F0] mb-4">
             Ready to Transform?
           </h2>
-          <p className="text-[#D7BFA8] text-xl max-w-2xl mx-auto mb-8">
+          <p className="text-[#D7BFA8] max-w-2xl mx-auto mb-6">
             Join Enchula Fitness today and experience luxury wellness in the heart of Kenya’s wilderness.
           </p>
-          <button className="px-10 py-4 bg-[#800000] hover:bg-[#A04040] text-[#FAF5F0] font-bold rounded-full text-lg transition-all duration-300 shadow-lg hover:scale-105">
-           <a 
-           href="#booking">
+          <Link
+            href="/booking"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#800000] to-[#5C4033] hover:from-[#A04040] hover:to-[#6B4423] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
             Book a Tour
-            </a>
-          </button>
+          </Link>
         </div>
       </div>
     </section>
