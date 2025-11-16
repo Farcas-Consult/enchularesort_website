@@ -1,5 +1,14 @@
 "use client";
 
+// ✅ Additions start here
+import React, { useEffect } from "react";
+
+// Smooth scroll restoration and accessibility improvement
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
+}
+// ✅ Additions end here
+
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
